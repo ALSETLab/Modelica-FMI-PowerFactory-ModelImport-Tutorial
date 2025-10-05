@@ -115,7 +115,7 @@ package TestSCRX
       parameter Boolean C_SWITCH = false "Feeding selection. False for bus fed, and True for solid fed";
       parameter Real r_cr_fd = 10 "Ratio between crowbar circuit resistance and field circuit resistance";
     //  parameter Real EFD0 = 1.45;
-    //  parameter Real ECOMP0 = 1;
+      //  parameter Real ECOMP0 = 1;
       Modelica.Blocks.Interfaces.RealInput ECOMP annotation (
         Placement(transformation(origin = {-100, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}})));
       Modelica.Blocks.Interfaces.RealOutput EFD annotation (
@@ -350,7 +350,7 @@ package TestSCRX
         Q_0=5416582,                                                                                                 R_a = 0, S10 = 0.11, S12 = 0.39, Tpd0 = 5, Tppd0 = 0.07, Tppq0 = 0.09, Tpq0 = 0.9, Xd = 1.84, Xl = 0.12, Xpd = 0.41, Xpp = 0.2, Xppd = 0.2, Xppq = 0.2, Xpq = 0.6, Xq = 1.75,
         angle_0=0.070492225331847,                                                                                                                                                                                                        v_0 = 1) annotation (
         Placement(transformation(origin = {-8.8, 0}, extent = {{-57.2, -13}, {-31.2, 13}})));
-      Components.SCRXwInitAsInput sCRXwInitAsInput
+      Components.SCRXwInitAsInput sCRXwInitAsInput(r_cr_fd = 0)
         annotation (Placement(transformation(extent={{-100,-18},{-80,2}})));
     equation
     connect(GEN1.p, gENROU.p) annotation (
