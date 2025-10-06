@@ -15,7 +15,7 @@ package TestSCRX
       parameter Real EFD0 = 1.45;
       parameter Real ECOMP0 = 1;
       Modelica.Blocks.Interfaces.RealInput ECOMP annotation (
-        Placement(transformation(origin = {-100, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}})));
+        Placement(transformation(origin = {-100, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin={-120,0},   extent = {{-20, -20}, {20, 20}})));
       Modelica.Blocks.Interfaces.RealOutput EFD annotation (
         Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}})));
       Modelica.Blocks.Math.Feedback feedback annotation (
@@ -101,7 +101,11 @@ package TestSCRX
       connect(feedback1.y, gain.u) annotation (
         Line(points={{57,-1},{57,-2},{59,-2},{59,-1},{59.2,-1},{59.2,-58}},          color = {0, 0, 127}));
       annotation (
-      Icon(graphics={  Rectangle(extent = {{-100, 100}, {100, -100}}), Text(origin = {17, 2}, extent = {{-63, 42}, {63, -42}}, textString = "SCRX")}));
+      Icon(graphics={Text(
+              extent={{-80,60},{80,-60}},
+              textColor={28,108,200},
+              textString="SCRX"), Rectangle(extent={{-100,100},{100,-100}},
+                lineColor={28,108,200})}));
     end SCRX;
 
     model SCRXwInitAsInput
@@ -117,9 +121,9 @@ package TestSCRX
     //  parameter Real EFD0 = 1.45;
       //  parameter Real ECOMP0 = 1;
       Modelica.Blocks.Interfaces.RealInput ECOMP annotation (
-        Placement(transformation(origin = {-100, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}})));
+        Placement(transformation(origin={-120,0},    extent = {{-20, -20}, {20, 20}}), iconTransformation(origin={-120,0},   extent = {{-20, -20}, {20, 20}})));
       Modelica.Blocks.Interfaces.RealOutput EFD annotation (
-        Placement(transformation(origin={150,0},    extent = {{-10, -10}, {10, 10}}), iconTransformation(origin={150,0},    extent = {{-10, -10}, {10, 10}})));
+        Placement(transformation(origin={110,0},    extent = {{-10, -10}, {10, 10}}), iconTransformation(origin={110,0},    extent = {{-10, -10}, {10, 10}})));
       Modelica.Blocks.Math.Feedback feedback annotation (
         Placement(transformation(origin = {-60, -26}, extent = {{-10, 10}, {10, -10}})));
       Modelica.Blocks.Sources.Constant VoltageReference(k = V_REF) annotation (
@@ -168,7 +172,7 @@ package TestSCRX
             origin={40,-120}), iconTransformation(
             extent={{-20,-20},{20,20}},
             rotation=90,
-            origin={0,-120})));
+            origin={60,-120})));
     protected
       parameter Real VR0(fixed = false);
       parameter Real V_REF(fixed=false);
@@ -181,7 +185,7 @@ package TestSCRX
       connect(VoltageReference.y, feedback.u1) annotation (
         Line(points = {{-79, -34}, {-73.5, -34}, {-73.5, -26}, {-68, -26}}, color = {0, 0, 127}));
       connect(ECOMP, feedback.u2) annotation (
-        Line(points = {{-100, 0}, {-60, 0}, {-60, -18}}, color = {0, 0, 127}));
+        Line(points={{-120,0},{-60,0},{-60,-18}},        color = {0, 0, 127}));
       connect(limiter.y, product.u1) annotation (
         Line(points={{80.4,-58},{85,-58}},    color = {0, 0, 127}));
       connect(gain.y, limiter.u) annotation (
@@ -217,32 +221,34 @@ package TestSCRX
       connect(feedback1.y, gain.u) annotation (
         Line(points={{57,-1},{57,-2},{59,-2},{59,-1},{59.2,-1},{59.2,-58}},          color = {0, 0, 127}));
       connect(product.y, EFD) annotation (Line(points={{96.5,-55},{100,-55},{
-              100,0},{150,0}},
+              100,-2},{110,-2}},
                         color={0,0,127}));
-      connect(product.u2, ECOMP) annotation (Line(points={{85,-52},{80,-52},{80,
-              18},{-60,18},{-60,0},{-100,0}}, color={0,0,127}));
+      connect(product.u2, ECOMP) annotation (Line(points={{85,-52},{85,16},{-90,
+              16},{-90,0},{-120,0}},          color={0,0,127}));
       annotation (
-      Icon(coordinateSystem(extent={{-100,-100},{140,100}}),
-           graphics={  Rectangle(extent={{-100,100},{140,-100}}),      Text(origin={39,0},    extent = {{-63, 42}, {63, -42}}, textString = "SCRX"),
+      Icon(coordinateSystem(grid={2,2}),
+           graphics={
             Text(
-              extent={{-37.5,-7.5},{37.5,7.5}},
+              extent={{-34,-8},{34,8}},
               textColor={28,108,200},
-              textString="XADIFD",
-              origin={61.5,-71.5},
-              rotation=90),
-            Text(
-              extent={{-37.5,-7.5},{37.5,7.5}},
-              textColor={28,108,200},
-              origin={1.5,-67.5},
+              origin={60,-60},
               rotation=90,
-              textString="ECOMP0"),
+              textString="ECOMP0",
+              horizontalAlignment=TextAlignment.Left),
             Text(
-              extent={{-37.5,-7.5},{37.5,7.5}},
+              extent={{-27,-8},{27,8}},
               textColor={28,108,200},
-              origin={-58.5,-77.5},
+              origin={-60,-67},
               rotation=90,
-              textString="EFD0")}), Diagram(coordinateSystem(extent={{-100,-100},{140,
-                100}})));
+              textString="EFD0",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{-100,76},{100,-44}},
+              textColor={28,108,200},
+              textString="SCRX
+For Export"),
+            Rectangle(extent={{-100,100},{100,-100}}, lineColor={28,108,200})}),
+                                    Diagram(coordinateSystem(grid={2,2})));
     end SCRXwInitAsInput;
 
     model SCRXexport
@@ -257,13 +263,16 @@ package TestSCRX
         r_cr_fd=r_cr_fd)
         annotation (Placement(transformation(extent={{18,-32},{82,32}})));
       Modelica.Blocks.Interfaces.RealInput EFD0
-        annotation (Placement(transformation(extent={{-120,40},{-80,80}})));
+        annotation (Placement(transformation(extent={{-140,40},{-100,80}}),
+            iconTransformation(extent={{-140,40},{-100,80}})));
       Modelica.Blocks.Interfaces.RealInput ECOMP
-        annotation (Placement(transformation(extent={{-120,-20},{-80,20}})));
+        annotation (Placement(transformation(extent={{-140,-20},{-100,20}}),
+            iconTransformation(extent={{-140,-20},{-100,20}})));
       Modelica.Blocks.Interfaces.RealOutput EFD
         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
       Modelica.Blocks.Interfaces.RealInput XADIFD
-        annotation (Placement(transformation(extent={{-120,-80},{-80,-40}})));
+        annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}),
+            iconTransformation(extent={{-140,-80},{-100,-40}})));
       Modelica.Blocks.Sources.Constant const(k=0)
         annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
       parameter Real T_AT_B=0.1
@@ -300,17 +309,20 @@ package TestSCRX
         Icon(coordinateSystem(preserveAspectRatio=false), graphics={Rectangle(
                 extent={{-100,100},{100,-100}}, lineColor={28,108,200}),
             Text(
-              extent={{-76,84},{46,36}},
+              extent={{-80,80},{20,40}},
               textColor={28,108,200},
-              textString="EFD0"),
+              textString="EFD0",
+              horizontalAlignment=TextAlignment.Left),
             Text(
-              extent={{-70,26},{52,-22}},
+              extent={{-80,20},{60,-20}},
               textColor={28,108,200},
-              textString="ECOMP"),
+              textString="ECOMP",
+              horizontalAlignment=TextAlignment.Left),
             Text(
-              extent={{-74,-36},{48,-84}},
+              extent={{-80,-40},{40,-80}},
               textColor={28,108,200},
-              textString="XADIFD")}),
+              textString="XADIFD",
+              horizontalAlignment=TextAlignment.Left)}),
         Diagram(coordinateSystem(preserveAspectRatio=false)));
     end SCRXexport;
   end Components;
@@ -326,18 +338,20 @@ package TestSCRX
         Q_0=5416582,                                                                                                 R_a = 0, S10 = 0.11, S12 = 0.39, Tpd0 = 5, Tppd0 = 0.07, Tppq0 = 0.09, Tpq0 = 0.9, Xd = 1.84, Xl = 0.12, Xpd = 0.41, Xpp = 0.2, Xppd = 0.2, Xppq = 0.2, Xpq = 0.6, Xq = 1.75,
         angle_0=0.070492225331847,                                                                                                                                                                                                        v_0 = 1) annotation (
         Placement(transformation(origin = {-8.8, 0}, extent = {{-57.2, -13}, {-31.2, 13}})));
-      Components.SCRX sCRXwInitAsInput(EFD0=1.436146616, ECOMP0=gENROU.v_0)
-        annotation (Placement(transformation(extent={{-100,-20},{-76,4}})));
+      Components.SCRX sCRXwInitAsInput(
+        r_cr_fd=0,
+        EFD0=gENROU.EFD0,                                ECOMP0=gENROU.v_0)
+        annotation (Placement(transformation(extent={{-94,-18},{-74,2}})));
     equation
     connect(GEN1.p, gENROU.p) annotation (
         Line(points = {{-30, 0}, {-40, 0}}, color = {0, 0, 255}));
     connect(gENROU.PMECH, gENROU.PMECH0) annotation (
         Line(points={{-68.6,7.8},{-76,7.8},{-76,20},{-36,20},{-36,6.5},{-38.7,
               6.5}},                                                                  color = {0, 0, 127}));
-      connect(sCRXwInitAsInput.EFD, gENROU.EFD) annotation (Line(points={{-74.8,
-              -8},{-74,-7.8},{-68.6,-7.8}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRXwInitAsInput.ECOMP) annotation (Line(points={{
-              -38.7,-3.9},{-32,-3.9},{-32,-40},{-110,-40},{-110,-8},{-97.6,-8}},
+      connect(sCRXwInitAsInput.EFD, gENROU.EFD) annotation (Line(points={{-73,-8},
+              {-73,-7.8},{-68.6,-7.8}},     color={0,0,127}));
+      connect(gENROU.ETERM, sCRXwInitAsInput.ECOMP) annotation (Line(points={{-38.7,
+              -3.9},{-32,-3.9},{-32,-20},{-100,-20},{-100,-8},{-96,-8}},
             color={0,0,127}));
       annotation (experiment(StopTime=15, __Dymola_Algorithm="Dassl"));
     end TestWithOpenIPSLInitAsParam;
@@ -351,26 +365,27 @@ package TestSCRX
         angle_0=0.070492225331847,                                                                                                                                                                                                        v_0 = 1) annotation (
         Placement(transformation(origin = {-8.8, 0}, extent = {{-57.2, -13}, {-31.2, 13}})));
       Components.SCRXwInitAsInput sCRXwInitAsInput(r_cr_fd = 0)
-        annotation (Placement(transformation(extent={{-100,-18},{-80,2}})));
+        annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
     equation
     connect(GEN1.p, gENROU.p) annotation (
         Line(points = {{-30, 0}, {-40, 0}}, color = {0, 0, 255}));
     connect(gENROU.PMECH, gENROU.PMECH0) annotation (
         Line(points={{-68.6,7.8},{-76,7.8},{-76,20},{-36,20},{-36,6.5},{-38.7,
               6.5}},                                                                  color = {0, 0, 127}));
-      connect(sCRXwInitAsInput.EFD, gENROU.EFD) annotation (Line(points={{
-              -79.1667,-8},{-74,-7.8},{-68.6,-7.8}},
-                                            color={0,0,127}));
-      connect(sCRXwInitAsInput.EFD0, gENROU.EFD0) annotation (Line(points={{
-              -96.6667,-20},{-96,-20},{-96,-28},{-32,-28},{-32,-6.5},{-38.7,
-              -6.5}}, color={0,0,127}));
-      connect(sCRXwInitAsInput.ECOMP0, gENROU.ETERM) annotation (Line(points={{
-              -91.6667,-20},{-92,-20},{-92,-26},{-22,-26},{-22,-3.9},{-38.7,
-              -3.9}}, color={0,0,127}));
-      connect(sCRXwInitAsInput.ECOMP, gENROU.ETERM) annotation (Line(points={{
-              -98.3333,-8},{-108,-8},{-108,-34},{-22,-34},{-22,-3.9},{-38.7,
-              -3.9}}, color={0,0,127}));
-      annotation (experiment(StopTime=10, __Dymola_Algorithm="Dassl"));
+      connect(sCRXwInitAsInput.EFD, gENROU.EFD) annotation (Line(points={{-79,-10},
+              {-68.6,-10},{-68.6,-7.8}},    color={0,0,127}));
+      connect(sCRXwInitAsInput.EFD0, gENROU.EFD0) annotation (Line(points={{-96,-22},
+              {-96,-36},{-32,-36},{-32,-6.5},{-38.7,-6.5}},
+                      color={0,0,127}));
+      connect(sCRXwInitAsInput.ECOMP0, gENROU.ETERM) annotation (Line(points={{-84,-22},
+              {-84,-32},{-22,-32},{-22,-3.9},{-38.7,-3.9}},
+                      color={0,0,127}));
+      connect(sCRXwInitAsInput.ECOMP, gENROU.ETERM) annotation (Line(points={{-102,
+              -10},{-108,-10},{-108,-40},{-22,-40},{-22,-3.9},{-38.7,-3.9}},
+                      color={0,0,127}));
+      annotation (experiment(StopTime=10, __Dymola_Algorithm="Dassl"),
+        Diagram(coordinateSystem(extent={{-120,-100},{120,100}}, grid={2,2})),
+        Icon(coordinateSystem(extent={{-120,-100},{120,100}}, grid={2,2})));
     end TestWithOpenIPSLInitAsInput;
 
     model TestWithOpenIPSLOriginalSCRX
