@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/1068483966.svg)](https://doi.org/10.5281/zenodo.19859079)
 
-# Modelica-FMI-PowerFactory-ModelImport-Tutorial
+# Model Import Tutorial using Modelica, FMI and PowerFactory
 Provides a tutorial on how to build and export models developed in a Modelica tool and import them into PowerFactory.
 
 ### Acknowledgement 
