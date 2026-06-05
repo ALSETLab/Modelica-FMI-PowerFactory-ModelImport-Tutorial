@@ -1,6 +1,7 @@
+# Model Import Tutorial using Modelica, FMI and PowerFactory
+
 [![DOI](https://zenodo.org/badge/1068483966.svg)](https://doi.org/10.5281/zenodo.19859079)
 
-# Model Import Tutorial using Modelica, FMI and PowerFactory
 Provides a tutorial on how to build and export models developed in a Modelica tool and import them into PowerFactory.
 
 ## **📖 Tutorial Overview**
@@ -16,10 +17,10 @@ The tutorial is split into two distinct workflows:
 
 ## **📂 Repository Structure**
 
-* `PowerFactoryFMI_Tutorial.pdf`: The step-by-step visual instruction guide.  
-* `FMUs/`: Pre-compiled FMI 2.0 (Model Exchange) files.  
-* `Modelica/`: OpenIPSL source files and export setups for OpenModelica.  
-* `PowerFactory/`: DIgSILENT PowerFactory (.pfd) project files containing the pre-configured grids and Composite Model Frames.
+* PowerFactoryFMI\_Tutorial.pdf: The step-by-step visual instruction guide.  
+* FMUs/: Pre-compiled FMI 2.0 (Model Exchange) files.  
+* Modelica/: OpenIPSL source files and export setups for OpenModelica.  
+* PowerFactory/: DIgSILENT PowerFactory (.pfd) project files containing the pre-configured grids and Composite Model Frames.
 
 ## **🚀 Getting Started**
 
@@ -34,5 +35,6 @@ The models and methodologies utilized in this tutorial are detailed in our upcom
 
 > H. Chang and L. Vanfretti, “Deploying OpenIPSL Models into DIgSILENT PowerFactory via FMI Model Exchange,” under review, American Modelica & FMI Conference 2026, Atlanta, GA, USA, October 12–14, 2026\.
 
-## Acknowledgement 
-(2025-2026) This work was supported through the [Elia Group and Energinet Research Challenge](https://www.mccs.com/en/latest-news/20250602_update-on-elia-group-energinet-research-challenge) within the project responsding to to Research Question 4b (How can we in Modelica express and design a simplified model representation from a black box model (dll) given an interface and an accepted error tolerance?).
+## Acknowledgement
+
+(2025-2026) This work was supported through the [Elia Group and Energinet Research Challenge](https://www.mccs.com/en/latest-news/20250602_update-on-elia-group-energinet-research-challenge) within the project responding to Research Question 4b (How can we, in Modelica, express and design a simplified model representation from a black-box model (dll) given an interface and an accepted error tolerance?).
