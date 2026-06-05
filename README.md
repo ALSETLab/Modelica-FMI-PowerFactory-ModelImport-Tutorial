@@ -17,21 +17,23 @@ The tutorial is split into two distinct workflows:
 
 ## **📂 Repository Structure**
 
-* PowerFactoryFMI\_Tutorial.pdf: The step-by-step visual instruction guide.  
-* FMUs/: Pre-compiled FMI 2.0 (Model Exchange) files.  
-* Modelica/: OpenIPSL source files and export setups for OpenModelica.  
-* PowerFactory/: DIgSILENT PowerFactory (.pfd) project files containing the pre-configured grids and Composite Model Frames.
+* `PowerFactoryFMI_Tutorial.pdf`: The step-by-step visual instruction guide.  
+* `/Sources/FMUs/`: Pre-compiled FMI 2.0 (Model Exchange) files.  
+* `/Sources/Modelica/`: OpenIPSL source files and export setups for OpenModelica.  
+* `/Sources/PowerFactory/`: DIgSILENT PowerFactory (.pfd) project files containing the pre-configured grids and Composite Model Frames.
 
 ## **🚀 Getting Started**
 
 1. **Clone the repository:** [https://github.com/ALSETLab/Modelica-FMI-PowerFactory-ModelImport-Tutorial.git](https://github.com/ALSETLab/Modelica-FMI-PowerFactory-ModelImport-Tutorial.git)
 
 2. **Prerequisites:** Ensure you have OpenModelica (v1.22+), the OpenIPSL library, and DIgSILENT PowerFactory (2022+).  
-3. **Follow the guide:** Open PowerFactoryFMI\_Tutorial.pdf and follow the visual steps to import the .pfd files and link the provided .fmu packages.
+3. **Follow the guide:** Open `PowerFactoryFMI_Tutorial.pdf` and follow the visual steps to generate FMUs from the Modelica models, import the .pfd files and link the .fmu packages. If you want to skip generating the FMUs, you can use the ones provided under `/Sources/FMUs/`.
 
 ## **📝 Citation**
 
-The models and methodologies utilized in this tutorial are detailed in our upcoming paper. **If you use this tutorial, the models, or the workflow in your academic or professional work, please cite:**
+The models and methodologies utilized in this tutorial are detailed in our upcoming paper, for which you can download a pre-review pre-print from [ResearchGate, here.](https://www.researchgate.net/publication/406108844_Deploying_OpenIPSL_Models_into_DIgSILENT_PowerFactory_via_FMI_Model_Exchange)
+
+**If you use this tutorial, the models, or the workflow in your academic or professional work, please cite:**
 
 > H. Chang and L. Vanfretti, “Deploying OpenIPSL Models into DIgSILENT PowerFactory via FMI Model Exchange,” under review, American Modelica & FMI Conference 2026, Atlanta, GA, USA, October 12–14, 2026\.
 
