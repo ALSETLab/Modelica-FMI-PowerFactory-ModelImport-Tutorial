@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite both the software and the paper below."
+title: "Modelica-FMI-PowerFactory-ModelImport-Tutorial: Deploying OpenIPSL Models into DIgSILENT PowerFactory via FMI Model Exchange"
+type: software
+authors:
+  - family-names: Chang
+    given-names: Hao
+    affiliation: "Electrical, Computer and Systems Engineering Department, Rensselaer Polytechnic Institute, Troy, NY, USA"
+    email: changh7@rpi.edu
+  - family-names: Vanfretti
+    given-names: Luigi
+    affiliation: "Electrical, Computer and Systems Engineering Department, Rensselaer Polytechnic Institute, Troy, NY, USA"
+    email: vanfrl@rpi.edu
+license: BSD-3-Clause
+repository-code: "https://github.com/ALSETLab/Modelica-FMI-PowerFactory-ModelImport-Tutorial"
+doi: 10.5281/zenodo.19859079
+preferred-citation:
+  type: conference-paper
+  title: "Deploying OpenIPSL Models into DIgSILENT PowerFactory via FMI Model Exchange"
+  authors:
+    - family-names: Chang
+      given-names: Hao
+      affiliation: "Electrical, Computer and Systems Engineering Department, Rensselaer Polytechnic Institute, Troy, NY, USA"
+    - family-names: Vanfretti
+      given-names: Luigi
+      affiliation: "Electrical, Computer and Systems Engineering Department, Rensselaer Polytechnic Institute, Troy, NY, USA"
+  collection-title: "Proceedings of the American Modelica & FMI Conference 2026"
+  year: 2026
+  notes: "Under review. Pre-print available at https://www.researchgate.net/publication/406108844"
+  # TODO: add pages: and doi: after publication
