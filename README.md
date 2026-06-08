@@ -1,4 +1,4 @@
-# Modelica-FMI-PowerFactory-ModelImport-Tutorial
+# Modelica-FMI-PowerFactory-Model-Import-Tutorial
 
 **Tutorial and open-source companion for deploying OpenIPSL Modelica models into DIgSILENT PowerFactory via FMI Model Exchange.**
 
